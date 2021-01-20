@@ -1,0 +1,258 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Roboto;
+  font-weight: bold;
+}
+
+#scroll-area {
+  width: 100%;
+  min-width: 550px;
+  height: 100vh;
+  scroll-snap-type: y mandatory;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scroll-area ::-webkit-scrollbar {
+  display: none;
+}
+
+.section {
+  height: 100vh;
+  min-height: 500px;
+
+  color: #fff;
+  scroll-snap-align: start;
+  box-sizing: border-box;
+}
+
+#section-top {
+  background-color: #cc4d27;
+  font-size: 70px;
+  align-items: center;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+#section-works {
+  background-color: rgb(51, 51, 51);
+}
+
+#section-contacts {
+  background-color: rgb(32, 32, 32);
+}
+
+.section-title {
+  text-align: center;
+  font-size: 50px;
+}
+
+h2.section-title {
+  padding-top: 20px;
+  position: relative;
+}
+
+h2.section-title::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 3px;
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  border-radius: 20px;
+}
+
+#wrapper-box {
+  width: 100vw;
+  max-width: 800px;
+  height: calc(100vh - 94px);
+  margin: 0 auto;
+  margin-top: 8px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.app-box {
+  display: inline-block;
+  border-radius: 15px;
+  background-color: rgb(238, 238, 238);
+  width: 250px;
+  height: 60vh;
+  min-height: 300px;
+  max-height: 400px;
+  padding: 30px 20px;
+  box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease 0s;
+}
+
+.app-box:hover {
+  cursor: pointer;
+  box-shadow: 5px 5px 20px 15px rgba(0, 0, 0, 0.25);
+  transform: scale(1.03, 1.03);
+}
+
+.app-link {
+  color: black;
+  text-decoration: none;
+}
+
+.app-img {
+  display: block;
+  margin: 0 auto;
+  width: 140px;
+  border-radius: 20px;
+  box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.25);
+}
+
+.app-name {
+  position: relative;
+  margin-top: 60px;
+  text-align: center;
+  font-size: 25px;
+  color: rgb(56, 56, 56);
+}
+
+.app-name::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: rgb(56, 56, 56);
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+a.disabled {
+  pointer-events: none;
+}
+
+#contacts-box {
+  background-color: rgb(238, 238, 238);
+  width: 60%;
+  min-width: 520px;
+  height: calc(100vh - 200px);
+  min-height: 250px;
+  max-height: 400px;
+  padding: 5% 0;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 20px;
+  color: rgb(56, 56, 56);
+  position: relative;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  -webkit-align-items: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+}
+
+.contacts-title {
+  font-size: 30px;
+}
+.contacts-body {
+  font-size: 25px;
+  margin-top: 10px;
+  color: #555555;
+}
+
+.pagination {
+  position: fixed;
+  top: 50%;
+  right: 24px;
+  transform: translateY(-50%);
+}
+
+.pagination a {
+  display: block;
+  width: 8px;
+  height: 8px;
+  margin: 24px 0;
+  border-radius: 50%;
+  background-color: #cccccc;
+  transition: transform 0.2s;
+}
+
+.pagination a.active {
+  transform: scale(1.8);
+  background-color: #fcfcfc;
+}
+
+@media screen and (max-width: 550px) {
+  #scroll-area {
+    min-width: initial;
+  }
+
+  h1 {
+    font-size: 50px;
+  }
+
+  h2.section-title {
+    font-size: 40px;
+  }
+
+  #app-boxes {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .app-box {
+    width: 240px;
+  }
+
+  .app-box:not(:first-child) {
+    display: none;
+  }
+
+  .app-img {
+    width: 80px;
+  }
+
+  #contacts-box {
+    width: 300px;
+    height: 400px;
+    min-width: initial;
+  }
+
+  .contacts-body {
+    font-size: 15px;
+  }
+
+  #pagination {
+    display: none;
+  }
+}

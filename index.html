@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+    <head>
+        <link rel="icon" type="image/svg" href="favicon.svg">
+
+        <meta charset="UTF-8" />
+        <title>Redridge</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+
+    </head>
+
+    <body>
+        <div id="scroll-area">
+            <section id="section-top" class="section">
+                <h1>Redridge</h1>
+
+            </section>
+            <section id="section-works" class="section">
+                <h2 class="section-title">Works</h2>
+                <div id="wrapper-box">
+                    <a class="app-link app-box"
+                        href="https://play.google.com/store/apps/details?id=com.redridge.fourcolorsothello"
+                        target="_blank" rel="noopener noreferrer">
+                        <img class="app-img"
+                            src="https://play-lh.googleusercontent.com/pVPeqOHdE4CIJk19svV4PU16IlzupDFhmTZmD092aUkbRxBXFsIenFOP1_taxIMvyUo=s180-rw"
+                            alt="four colors othello">
+                        <p class="app-name">4 Colors Othello</p>
+                    </a>
+
+                    <a class="app-link app-box disabled" href="">
+                        <img class="app-img" src="coming_soon.png" alt="comming soon">
+                        <p class="app-name">Coming Soon</p>
+                    </a>
+                </div>
+
+            </section>
+            <section id="section-contacts" class="section">
+                <h2 class="section-title">Contacts</h2>
+                <div id="wrapper-box">
+                    <div id="contacts-box">
+                        <div class="contact-box">
+                            <div class="contacts-title">Mail</div>
+                            <div class="contacts-body">contact.redridge@gmail.com</div>
+                        </div>
+
+                        <div class="contact-box">
+                            <div class="contacts-title">Twitter</div>
+                            <div class="contacts-body">@redridge_jp</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+        <nav id="pagination" class="pagination">
+            <a id="pagination1" href="#section-top"></a>
+            <a id="pagination2" href="#section-works"></a>
+            <a id="pagination2" href="#section-contacts"></a>
+        </nav>
+        <script>
+            const sections = document.querySelectorAll(".section");
+            const observerRoot = document.querySelector(".scroll-area");
+            const options = {
+                root: observerRoot,
+                rootMargin: "-50% 0px",
+                threshold: 0
+            };
+            const observer = new IntersectionObserver(doWhenIntersect, options);
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+
+            function doWhenIntersect(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        activatePagination(entry.target);
+                    }
+                });
+            }
+
+
+            function activatePagination(element) {
+                const currentActiveIndex = document.querySelector(
+                    "#pagination .active"
+                );
+                if (currentActiveIndex !== null) {
+                    currentActiveIndex.classList.remove("active");
+                }
+                const newActiveIndex = document.querySelector(
+                    `a[href='#${element.id}']`
+                );
+                newActiveIndex.classList.add("active");
+            }
+        </script>
+    </body>
+
+</html>
