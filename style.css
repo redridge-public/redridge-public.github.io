@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -5,11 +7,16 @@
   font-family: Roboto;
   font-weight: bold;
 }
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
 
 #scroll-area {
   width: 100%;
   min-width: 550px;
-  height: 100vh;
+  height: 100%;
   scroll-snap-type: y mandatory;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
@@ -21,9 +28,8 @@
 }
 
 .section {
-  height: 100vh;
+  height: 100%;
   min-height: 500px;
-
   color: #fff;
   scroll-snap-align: start;
   box-sizing: border-box;
@@ -76,9 +82,9 @@ h2.section-title::after {
 }
 
 #wrapper-box {
-  width: 100vw;
+  width: 100%;
   max-width: 800px;
-  height: calc(100vh - 94px);
+  height: calc(100% - 94px);
   margin: 0 auto;
   margin-top: 8px;
   display: -webkit-flex;
@@ -100,7 +106,7 @@ h2.section-title::after {
   border-radius: 15px;
   background-color: rgb(238, 238, 238);
   width: 250px;
-  height: 60vh;
+  height: 60%;
   min-height: 300px;
   max-height: 400px;
   padding: 30px 20px;
@@ -155,7 +161,7 @@ a.disabled {
   background-color: rgb(238, 238, 238);
   width: 60%;
   min-width: 520px;
-  height: calc(100vh - 200px);
+  height: calc(100% - 200px);
   min-height: 250px;
   max-height: 400px;
   padding: 5% 0;
